@@ -1,1 +1,7 @@
 logs/
+_build
+blib/
+Build
+MANIFEST
+MYMETA.json
+MYMETA.yml
