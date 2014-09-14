@@ -26,9 +26,11 @@ get '/wiki/:name' => sub {
 	my $baseurl = request->uri_base;
 	s|wikipedia.org/wiki/|$baseurl/wiki/|g;
 	s|\bportmanteau\b|port- portman -- err -- a word made up of other words|;
+	s|//upload\S*Wikiderpia-logo-v2.svg.png|/o/logo.png|g;
 	s|//upload.wikimedia.org/wikipedia/en/b/bc/Wiki.png|/o/logo.png|;
-	s|"//upload.wikimedia.org/.*Wikiderpia-logo-v2.svg.png"|"/o/logo.png"|;
 	s|File:Wikiderpia|File:Wikipedia|g;
+	s|Wikiderpia_Main_Page.png|Wikipedia_Main_Page.png|g;
+	s|Wikiderpia_editing_interface.png|Wikipedia_editing_interface.png|g;
 
 	status $res->code;
 	return $_;
